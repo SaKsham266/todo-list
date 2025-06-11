@@ -1,32 +1,38 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 /* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: #f4f6f8;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
     min-height: 100vh;
+    transition: background-color 0.3s ease;
 }
 
 .container {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     width: 100%;
     max-width: 500px;
-    padding: 20px;
+    padding: 30px;
+    transition: background-color 0.3s ease;
 }
 
 h1 {
     text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+    color: #2e7d32;
+    margin-bottom: 25px;
+    font-size: 28px;
 }
 
 /* Input Styles */
@@ -37,24 +43,31 @@ h1 {
 
 #taskInput {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px 0 0 4px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px 0 0 6px;
     font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#taskInput:focus {
+    border-color: #4caf50;
 }
 
 #addBtn {
-    padding: 10px 15px;
-    background-color: #4caf50;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
     color: white;
     border: none;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 6px 6px 0;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 #addBtn:hover {
-    background-color: #45a049;
+    background-color: #388e3c;
 }
 
 /* Filter Buttons */
@@ -66,17 +79,18 @@ h1 {
 }
 
 .filters button {
-    padding: 8px 12px;
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 8px 14px;
+    background-color: #eeeeee;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
 }
 
 .filters button.active {
     background-color: #4caf50;
     color: white;
-    border-color: #4caf50;
 }
 
 /* Task List */
@@ -86,23 +100,24 @@ h1 {
 }
 
 .task-item {
+    background-color: #fafafa;
     display: flex;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-}
-
-.task-item:last-child {
-    border-bottom: none;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease;
 }
 
 .task-checkbox {
-    margin-right: 10px;
+    margin-right: 12px;
     cursor: pointer;
 }
 
 .task-text {
     flex: 1;
+    font-size: 16px;
     word-break: break-word;
 }
 
@@ -112,17 +127,17 @@ h1 {
 }
 
 .delete-btn {
-    background-color: #f44336;
+    background-color: #ff5252;
     color: white;
     border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
+    border-radius: 6px;
+    padding: 6px 12px;
     cursor: pointer;
-    margin-left: 10px;
+    transition: background-color 0.3s;
 }
 
 .delete-btn:hover {
-    background-color: #d32f2f;
+    background-color: #e53935;
 }
 
 /* Task Stats */
@@ -149,25 +164,88 @@ h1 {
 /* Responsive Design */
 @media (max-width: 600px) {
     .container {
-        padding: 15px;
+        padding: 20px;
     }
-    
+
     h1 {
         font-size: 24px;
     }
-    
+
     #taskInput, #addBtn {
         font-size: 14px;
     }
-    
+
     .filters button {
         padding: 6px 10px;
         font-size: 12px;
     }
-    
+
     .task-stats {
         flex-direction: column;
         gap: 10px;
         align-items: flex-start;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
