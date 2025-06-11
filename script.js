@@ -164,10 +164,31 @@ function updateTaskCount() {
     const activeTasks = tasks.filter(task => !task.completed).length;
     taskCount.textContent = `${activeTasks} task${activeTasks !== 1 ? 's' : ''} left`;
 }
-document.getElementById('themeToggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+const themeToggleBtn = document.getElementById('themeToggle');
+
+function applyTheme(theme) {
+    // Apply or remove dark mode class on <body>
+    document.body.classList.toggle('dark-mode', theme === 'dark');
+
+    // Update icon based on theme
+    themeToggleBtn.textContent = theme === 'dark' ? '🌞' : '🌙';
+
+    // Save the selected theme in localStorage
+    localStorage.setItem('theme', theme);
+}
+
+function toggleTheme() {
+    const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+}
+
+// Run this when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light'; // default to light
+    applyTheme(savedTheme); // Apply saved theme on load
+
+    // Add event listener to toggle button
+    themeToggleBtn.addEventListener('click', toggleTheme);
 });
 
-
-// Initialize the app when the DOM is loaded
-document.addEventListener('DOMContentLoaded', init);
