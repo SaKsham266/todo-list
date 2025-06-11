@@ -199,7 +199,11 @@ body.dark-mode .container {
 body.dark-mode input,
 body.dark-mode button {
     background-color: #2a2a2a;
-    color: white;
+    color: #fff;
+}
+
+body.dark-mode .task-item{
+    background-color: #2c2c2c;
 }
 
 
