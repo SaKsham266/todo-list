@@ -164,6 +164,10 @@ function updateTaskCount() {
     const activeTasks = tasks.filter(task => !task.completed).length;
     taskCount.textContent = `${activeTasks} task${activeTasks !== 1 ? 's' : ''} left`;
 }
+document.getElementById('themeToggle').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
+
 
 // Initialize the app when the DOM is loaded
 document.addEventListener('DOMContentLoaded', init);
